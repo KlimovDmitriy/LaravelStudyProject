@@ -13,7 +13,7 @@ class AdminController extends Controller
         $removeProductRoute = route('admin::remove');
         return <<<html
 <div style="background-color: aqua"><a href ={$addProductRoute}> Добавить продукты</a>
-<br><a href ={$removeProductRoute}> Удалить продукты</a></div>
+<br><a href ={$removeProductRoute}> Удалите продукты</a></div>
 html;
 
 

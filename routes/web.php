@@ -13,17 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainPageController@index')->name('home');
 
 
 Route::group([
     'prefix' => 'catalog',
-    'namespace' => 'Product'
+    'namespace' => 'Product',
+    'as' => 'catalog::'
 ], function (){
-    Route::get('/', 'ProductController@index');
-    Route::get('/{category}', 'ProductController@showCategory');
+    Route::get('/', 'ProductController@index')->name('index');
+    Route::get('/{category}', 'ProductController@showCategory')->name('show');
 });
 
 Route::group([
